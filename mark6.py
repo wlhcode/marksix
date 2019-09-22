@@ -18,7 +18,9 @@ f.close()
 
 while c == 1:
 	print("Round", t)
-	print("Balance: $", round(b, 2), sep = '')
+	print("Balance: ", end = '')
+	if b < 0: print("-", end = '')
+	print("$", round(abs(b), 2), sep = '')
 	
 	print("Mark Six Guesses: ", sep = '', end = '')
 	g = str(input())
@@ -73,7 +75,7 @@ while c == 1:
 		
 		for y in l:
 			if k == y:
-				if x < 6: z += 10
+				if x < 7: z += 10
 				else: z += 5
 				break
 	
@@ -89,7 +91,7 @@ while c == 1:
 		elif z == 35: print("6th prize: $320")
 		else: print("7th prize: $40")
 		
-		b += p[-0.2 * z + 12]
+		b += p[int(-1 * z / 5) + 12]
 	
 	t += 1
 	print("\nContinue? (y/n) ", end = '')
@@ -105,3 +107,6 @@ while c == 1:
 	else:
 		c = 1
 		print("\n-----\n")
+
+print("Saving...")
+time.sleep(1)
